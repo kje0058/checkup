@@ -2,6 +2,7 @@ import streamlit as st
 from app_home import run_app_home
 from app_eda import run_app_eda
 from app_bmi import run_app_bmi
+from streamlit_extras.let_it_rain import rain
 
 def main():
 
@@ -12,6 +13,13 @@ def main():
     st.sidebar.header('건강한 하루되세요:muscle:')
     choice = st.sidebar.selectbox('📌메뉴', menu)
     st.sidebar.image("https://img.freepik.com/free-vector/patient-taking-a-medical-examination-in-a-clinic_52683-57136.jpg?w=826&t=st=1686098847~exp=1686099447~hmac=efc82849049c1abbcacf4d2eb917926b6ba87b8ab36c2dc2d41f562adb792467", use_column_width=True, caption='작가 pikisuperstar 출처 Freepik')
+
+    rain(
+        emoji='💪',
+        font_size=30,
+        falling_speed=5,
+        animation_length="infinite",
+    )
 
     if choice == menu[0] :
         run_app_home()
