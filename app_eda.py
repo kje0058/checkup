@@ -14,6 +14,9 @@ if platform.system() == 'Linux':
 
 def run_app_eda():
     df_new=pd.read_csv('data/checkup_2020.CSV',index_col=0)
+    ck_1=st.checkbox('데이터 원본 보기')
+    if ck_1 :
+        st.image('data/data_1.jpg')
     st.subheader(':round_pushpin:데이터 보기')
     st.write('데이터 출처 : 공공데이터포털(https://www.data.go.kr/data/15007122/fileData.do)')
     st.dataframe(df_new)
