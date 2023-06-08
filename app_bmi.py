@@ -16,7 +16,7 @@ if platform.system() == 'Linux':
 def run_app_bmi() :
     tab1, tab2 = st.tabs([':page_facing_up: BMI 분석', ':bar_chart: BMI 측정'])
     with tab1:
-        df_new=pd.read_csv('data/checkup_2020.CSV', encoding='cp949')
+        df_new=pd.read_csv('data/checkup_2020.CSV', index_col=0)
         st.subheader('📍BMI 구간별 분포')
         fig2=plt.figure()
         df_1=df_new['BMI_bins'].value_counts()
