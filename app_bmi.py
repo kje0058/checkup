@@ -186,5 +186,5 @@ def run_app_bmi() :
 이렇게 식이조절과 더불어 운동을 하게 되면 비만걱정은 이제 그만해도 되는 것이죠.''')
                 st.write('''출처 : 하이닥(https://www.hidoc.co.kr/healthstory/news/C0000393491)''')
         st.subheader("📍추천 운동_운동별 칼로리 소모량")
-        st.image('data\diet.jpg', caption='구로보건소(https://www.guro.go.kr/health/contents.do?key=1385&)')
+        st.image('data/diet.jpg', caption='구로보건소(https://www.guro.go.kr/health/contents.do?key=1385&)')
 # https://www.guro.go.kr/health/contents.do?key=1385&
