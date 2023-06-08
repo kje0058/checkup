@@ -17,7 +17,7 @@ def run_app_bmi() :
     tab1, tab2 = st.tabs([':page_facing_up: BMI 분석', ':bar_chart: BMI 측정'])
     with tab1:
         df=pd.read_csv('data/checkup_2020.CSV', encoding='cp949')
-        df=df.sample(n=50000, random_state=42)
+        df=df.sample(n=10000, random_state=42)
         df_new = df.iloc[:,3:8]
         df_new['음주여부'] = df['음주여부']
         df_new['흡연상태'] = df['흡연상태']
