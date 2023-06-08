@@ -16,29 +16,7 @@ if platform.system() == 'Linux':
 def run_app_bmi() :
     tab1, tab2 = st.tabs([':page_facing_up: BMI 분석', ':bar_chart: BMI 측정'])
     with tab1:
-        df=pd.read_csv('data/checkup_2020.CSV', encoding='cp949')
-        df=df.sample(n=10000, random_state=42)
-        df_new = df.iloc[:,3:8]
-        df_new['음주여부'] = df['음주여부']
-        df_new['흡연상태'] = df['흡연상태']
-        df_new['식전혈당(공복혈당)'] = df['식전혈당(공복혈당)']
-        df_new['수축기 혈압'] = df['수축기 혈압']
-        df_new['BMI'] = round(df_new['체중(5Kg 단위)'] / (df_new['신장(5Cm단위)']/100) / (df_new['신장(5Cm단위)']/100),2)
-        df_new.dropna(inplace=True)
-        BMI_list=[0,1,2,3]
-        bins=[0,18.5,24.9,29.9,60.0]
-        df_new['BMI_bins'] = pd.cut(df_new['BMI'], bins, labels=BMI_list)
-        df_new['흡연상태']=df_new['흡연상태'].replace({1:0, 2:1, 3:2}).astype(int)
-        df_new['음주여부']=df_new['음주여부'].astype(int)
-        df_new['식전혈당(공복혈당)']=df_new['식전혈당(공복혈당)'].astype(int)
-        df_new['수축기 혈압']=df_new['수축기 혈압'].astype(int)
-        df_new['성별코드']=df_new['성별코드'].replace({2:0}).astype(int)
-        df_new['연령대 코드(5세단위)']=df_new['연령대 코드(5세단위)'].replace({9:0, 10:0, 11:1, 12:1, 13:2, 14:2, 15:3, 16:3, 17:4, 18:4}).astype(int)
-        df_new.rename(columns={'연령대 코드(5세단위)':'연령대 코드(10세단위)'}, inplace=True)
-        df_new['BMI_bins'] = df_new['BMI_bins'].astype('int64')
-        df_new['허리둘레'].replace({680:df_new['허리둘레'].mean(),999:df_new['허리둘레'].mean()},inplace=True)
-        df_new['허리둘레'].replace({8.7:df_new['허리둘레'].mean(),5.8:df_new['허리둘레'].mean(),8.2:df_new['허리둘레'].mean()},inplace=True)
-
+        df_new=pd.read_csv('data/checkup_2020.CSV', encoding='cp949')
         st.subheader('📍BMI 구간별 분포')
         fig2=plt.figure()
         df_1=df_new['BMI_bins'].value_counts()
