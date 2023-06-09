@@ -1,4 +1,4 @@
-# 🏃‍♀️건강 Dream 행복 Dream🏃‍♂️
+![header](https://capsule-render.vercel.app/api?type=Waving&color=auto&height=180&section=header&text=🏃‍♀️건강Dream%20행복Dream🏃‍♂️&fontSize=60)
 40대 이상의 건강검진정보를 통해 BMI(체질량지수)를 구해보고, 유저의 키, 몸무게를 입력하면 BMI를 구해주고 건강한 삶을 유지하는 법!을 알려줍니다.
 
 
